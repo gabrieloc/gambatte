@@ -17,7 +17,7 @@
 //
 
 #include "cartridge.h"
-#include "file/file.h"
+#include "file.h"
 #include "../savestate.h"
 #include "pakinfo_internal.h"
 #include <cstring>
