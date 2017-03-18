@@ -136,10 +136,10 @@ static void read(std::ifstream &file, unsigned char *buf, std::size_t bufsize) {
 	file.read(reinterpret_cast<char*>(buf), minsize);
 	file.ignore(size - minsize);
 
-	if (static_cast<unsigned char>(/* DISABLES CODE */ (0x100))) {
-		for (std::size_t i = 0; i < minsize; ++i)
-			buf[i] &= 0xFF;
-	}
+//	if (static_cast<unsigned char>(0x100)) {
+//		for (std::size_t i = 0; i < minsize; ++i)
+//			buf[i] &= 0xFF;
+//	}
 }
 
 static void read(std::ifstream &file, bool *buf, std::size_t bufsize) {
