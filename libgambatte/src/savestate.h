@@ -54,6 +54,8 @@ struct SaveState {
 		unsigned char f;
 		unsigned char h;
 		unsigned char l;
+		unsigned char opcode;
+		unsigned char /*bool*/ prefetched;
 		unsigned char /*bool*/ skip;
 	} cpu;
 
@@ -74,6 +76,7 @@ struct SaveState {
 		unsigned short dmaDestination;
 		unsigned char rambank;
 		unsigned char oamDmaPos;
+		unsigned char haltHdmaState;
 		unsigned char /*bool*/ IME;
 		unsigned char /*bool*/ halted;
 		unsigned char /*bool*/ enableRam;
@@ -139,7 +142,7 @@ struct SaveState {
 				unsigned long counter;
 				unsigned short shadow;
 				unsigned char nr0;
-				unsigned char /*bool*/ negging;
+				unsigned char /*bool*/ neg;
 			} sweep;
 			Duty duty;
 			Env env;
@@ -180,6 +183,7 @@ struct SaveState {
 		} ch4;
 
 		unsigned long cycleCounter;
+		unsigned char lastUpdate;
 	} spu;
 
 	struct RTC {

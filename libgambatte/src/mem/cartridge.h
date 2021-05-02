@@ -24,6 +24,7 @@
 #include "rtc.h"
 #include "savestate.h"
 #include "scoped_ptr.h"
+
 #include <string>
 #include <vector>
 
@@ -54,6 +55,7 @@ public:
 	unsigned char * wsrambankptr() const { return memptrs_.wsrambankptr(); }
 	unsigned char * vrambankptr() const { return memptrs_.vrambankptr(); }
 	OamDmaSrc oamDmaSrc() const { return memptrs_.oamDmaSrc(); }
+	bool isInOamDmaConflictArea(unsigned p) const { return memptrs_.isInOamDmaConflictArea(p); }
 	void setVrambank(unsigned bank) { memptrs_.setVrambank(bank); }
 	void setWrambank(unsigned bank) { memptrs_.setWrambank(bank); }
 	void setOamDmaSrc(OamDmaSrc oamDmaSrc) { memptrs_.setOamDmaSrc(oamDmaSrc); }
